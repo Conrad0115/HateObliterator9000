@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from hate_speech_detection import detect_hate_speech  # Import your hate speech detection function
 import os
+import regex as re
 
 app = Flask(__name__)
 
@@ -14,10 +15,15 @@ def home():
         # Pass the text to the detection function
         processed_text = detect_hate_speech(user_text)  # Process the text for hate speech
 
-    postprocessing = processed_text.split(", ")
-    pattern = 
+    toHighlight = processed_text.split(", ")
+    pattern = r'\b(' + '|'.join(map(re.escape,toHighlight)) + r')\b'
 
-    return render_template('index.html', user_text=user_text, processed_text=processed_text)
+    def highlight_words(text, pattern):
+        return re.sub(pattern, r'<span class="highlight">\g<0></span>', text)
+    
+    highlighted_text = highlight_words(user_text, pattern)
+
+    return render_template('index.html', user_text=user_text, processed_text=highlighted_text)
 
 if __name__ == '__main__':
     app.run(debug=True)
