@@ -15,6 +15,9 @@ def home():
         # Pass the text to the detection function
         processed_text = detect_hate_speech(user_text)  # Process the text for hate speech
 
+    if(processed_text == "######"):
+        return render_template('index.html', user_text=user_text, processed_text="No hate speech detected")
+    
     toHighlight = processed_text.split(", ")
     pattern = r'\b(' + '|'.join(map(re.escape,toHighlight)) + r')\b'
 
