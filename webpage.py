@@ -12,7 +12,10 @@ def home():
         user_text = request.form.get('user_input', '')
         # Pass the text to the detection function
         processed_text = detect_hate_speech(user_text)  # Process the text for hate speech
-    
+
+    postprocessing = processed_text.split(", ")
+    pattern = 
+
     return render_template('index.html', user_text=user_text, processed_text=processed_text)
 
 if __name__ == '__main__':
