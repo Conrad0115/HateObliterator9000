@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from hate_speech_detection import detect_hate_speech  # Import your hate speech detection function
+import os
 
 app = Flask(__name__)
 
