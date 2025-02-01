@@ -9,7 +9,17 @@ import csv
 
 
 def compile_slurs():
+    slurs = []
     with open('combined_table.csv', newline='') as f:
         reader = csv.reader(f)
-        slurs = list(map(lambda x: str(x), list(reader)))
-        return slurs
+        slurs.extend([item for sublist in reader for item in sublist])
+        
+    with open('acronyms.csv', newline='') as f:
+        reader = csv.reader(f)
+        slurs.extend([item for sublist in reader for item in sublist])
+        
+    with open('numbers.csv', newline='') as f:
+        reader = csv.reader(f)
+        slurs.extend([item for sublist in reader for item in sublist])
+    
+    return slurs
