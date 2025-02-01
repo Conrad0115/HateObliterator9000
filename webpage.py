@@ -19,7 +19,8 @@ def home():
     pattern = r'\b(' + '|'.join(map(re.escape,toHighlight)) + r')\b'
 
     def highlight_words(text, pattern):
-        return re.sub(pattern, r'<span class="highlight">\g<0></span>', text)
+        url = "http://www.rsdb.org/slur/"
+        return re.sub(pattern, rf'<a href="{url}\g<0>" class="highlight">\g<0></a>', text)
     
     highlighted_text = highlight_words(user_text, pattern)
 
