@@ -4,5 +4,12 @@ def detect_hate_speech(text):
     toReturn = gptscript.response(text)
     return toReturn
 
+import csv
+
+
+
 def compile_slurs():
-    return ["retard", "chink", "basketball americans"]
+    with open('slurs.csv', newline='') as f:
+        reader = csv.reader(f)
+        slurs = list(map(lambda x: str(x), list(reader)))
+    return slurs
