@@ -10,7 +10,7 @@
             background-color: #f8f9fa;
         }
         .container {
-            max-width: 600px;
+            max-width: 1000px;
             margin-top: 50px;
             background: white;
             padding: 30px;
@@ -18,17 +18,21 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         textarea {
+            margin-top: 2em;
             resize: vertical;
+        }
+
+        textarea::placeholder {
+            color: #0bf;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 class="text-center">Hate Speech Obliterator 9000</h1>
-        <p class="text-center">Enter your text to be analyzed for hate speech below:</p>
         <form method="POST">
             <div class="mb-3">
-                <textarea class="form-control" name="user_input" rows="5">{{ user_text }}</textarea>
+                <textarea class="form-control" name="user_input" rows="5" placeholder="Enter text to be analyzed for hatespeech here">{{ user_text }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary w-100">Submit</button>
         </form>
