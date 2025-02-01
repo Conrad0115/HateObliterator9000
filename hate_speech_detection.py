@@ -9,7 +9,7 @@ import csv
 
 
 def compile_slurs():
-    with open('combine_table.csv', newline='') as f:
+    with open('combined_table.csv', newline='') as f:
         reader = csv.reader(f)
         slurs = list(map(lambda x: str(x), list(reader)))
         return slurs
