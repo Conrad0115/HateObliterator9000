@@ -2,6 +2,7 @@ from openai import OpenAI
 import os as os
 import dotenv
 dotenv.load_dotenv()
+import time
 
 # Get the OpenAI API key
 openai_api_key = os.getenv("OPENAI_API_KEY")
@@ -33,6 +34,7 @@ def response(input):
       messages=message_history
     )
     reply_content = completion.choices[0].message.content
+    time.sleep(1)
     print(reply_content)
     return reply_content
 
