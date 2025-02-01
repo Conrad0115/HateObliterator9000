@@ -36,6 +36,10 @@ first_3= tables3[:3]
 
 for i, df in enumerate(first_3, start=1):
     # Create a filename. For example: table_1.csv, table_2.csv, etc.
+    df_first_col = df.iloc[:, :1]
+
     filename = f'table_{i}.csv'
-    df.to_csv(filename, index=False)
+    df_first_col.to_csv(filename, index=False)
+
+
 
