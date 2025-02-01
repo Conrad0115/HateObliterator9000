@@ -21,5 +21,8 @@ def compile_slurs():
     with open('numbers.csv', newline='') as f:
         reader = csv.reader(f)
         slurs.extend([item for sublist in reader for item in sublist])
+    with open('phrases.csv', newline='') as f:
+        reader = csv.reader(f)
+        slurs.extend([item for sublist in reader for item in sublist])
     
     return slurs

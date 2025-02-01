@@ -28,11 +28,17 @@
             background-color: rgb(141, 182, 245);
             font-weight: bold;
         }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            align-content: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center">Hate Speech Obliterator 9000</h1>
+        <img src="static\images\blacklogotrans.png" alt="SafeSpeech" class="img-fluid" style="max-width: 300px;">
         <form method="POST">
             <div class="mb-3">
                 <textarea class="form-control" name="user_input" rows="5" placeholder="Enter text to be analyzed for hate speech here">{{ user_text }}</textarea>
