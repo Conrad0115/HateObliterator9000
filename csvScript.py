@@ -11,8 +11,7 @@ first_26_tables = tables[:26]
 
 combined_df = pd.concat(first_26_tables, ignore_index=True)
 combined_df_clean = combined_df.dropna()
-first_col_df = combined_df_clean.iloc[:, :4]
-first_col_df= first_col_df.drop(columns=['Location or origin', 'Targets'])
+first_col_df = combined_df_clean.iloc[:, :1]
 
 print(first_col_df)
 
@@ -41,12 +40,14 @@ url3='https://en.wikipedia.org/wiki/List_of_symbols_designated_by_the_Anti-Defam
 tables3= pd.read_html(url3)
 first_3= tables3[:3]
 
+'''
 for i, df in enumerate(first_3, start=1):
     # Create a filename. For example: table_1.csv, table_2.csv, etc.
     df_first_col = df.iloc[:, :1]
 
     filename = f'table_{i}.csv'
     df_first_col.to_csv(filename, index=False)
+'''
 
 #this is for images
 response = requests.get(url3)
