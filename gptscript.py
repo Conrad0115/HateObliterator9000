@@ -1,11 +1,13 @@
 from openai import OpenAI
+import os as os
+import dotenv
+dotenv.load_dotenv()
 
-# HUGE SECURITY RISK 
+# Get the OpenAI API key
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
-apiKey = "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"
+client = OpenAI(api_key=openai_api_key)
 
-
-client = OpenAI(api_key=apiKey)
 
 message_history = []        # list of strings
 slurs = ["\"retard\"", "\"chink\"", "\"basketball americans\""]
@@ -32,4 +34,4 @@ def response(input):
     return reply_content
 
 intialize(slurs)
-response("These basketball americans keep stealing my bikes")
+response("poopity scoop")
