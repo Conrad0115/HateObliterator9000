@@ -23,7 +23,7 @@ def home():
 
     def highlight_words(text, pattern):
 
-        return re.sub(pattern, rf'<span class="highlight">\g<0></span>', text)
+        return re.sub(pattern, r'<span class="highlight">\g<0></span>', text)
     
     highlighted_text = highlight_words(user_text, pattern)
 

@@ -36,7 +36,7 @@ def response(input):
     )
     reply_content = completion.choices[0].message.content
     time.sleep(1)
-    print(reply_content)
+    #print(reply_content)
     return reply_content
 
 
