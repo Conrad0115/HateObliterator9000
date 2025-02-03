@@ -8,6 +8,6 @@ if __name__ == '__main__':
         racism_dict = csv.DictReader(racism)
         for d in racism_dict:
             img = requests.get(d['Image_URL']).content
-            with open(f'racistpics/racist_{racist_id}.jpg', 'wb') as handler:
+            with open(f'racistpics/racist_{racist_id}.png', 'wb') as handler:
                 handler.write(img)
             racist_id += 1
