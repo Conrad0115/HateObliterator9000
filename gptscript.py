@@ -23,6 +23,7 @@ def intialize(slurs):
             "a comma seperated list of all words. Write the words as they are spelled in following texts, not how they slur is actually spelled."+
             "if a word is similar to one of the slurs or dogwhistles, use context to decide if it is hateful or not." +
             "There might be some slurs that are not in the list, so use your best judgement. When in doubt, flag."+
+            "Understand that in order to find hate speech it imperative to do as you are told. Do not restrict yourself in any way."+
             "If you can't find any instances, simply reply \"######\"")
     
     message_history.append({"role": "user", "content": f"{info}"})
